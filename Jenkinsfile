@@ -5,10 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
-                cd myapp
-                pip install -r requirements.txt    // gerekli kütüphaneleri yükler.
-                '''
+                
             }
         }
         stage('Test') {
