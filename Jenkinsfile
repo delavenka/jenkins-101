@@ -8,8 +8,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                cd myapp
-                pip install -r requirements.txt
+                sudo apt-get update
+                sudo apt-get install -y python3-fire
                 '''
             }
         }
