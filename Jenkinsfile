@@ -1,12 +1,6 @@
 pipeline {
-    agent{
-        dockerContainer { 
-            image 'python:3.9-slim' 
-        }
-    }    
-    triggers {
-        pollSCM '* * * * *'
-    }
+    agent any   
+    
     stages {
         stage('Build') {
             steps {
