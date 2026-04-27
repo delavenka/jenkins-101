@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent{
+        docker { 
+            image 'python:3.9-slim' 
+        }
+    }    
     triggers {
         pollSCM '* * * * *'
     }
@@ -8,8 +12,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                sudo apt-get update
-                sudo apt-get install -y python3-fire
+                cd myapp
+                pip install -r requirements.txt    // gerekli kütüphaneleri yükler.
                 '''
             }
         }
